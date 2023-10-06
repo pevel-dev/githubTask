@@ -1,5 +1,4 @@
 import asyncio
-from collections import Counter
 from os import environ
 
 import dotenv
@@ -39,6 +38,8 @@ def out_plt(results, org_name):
 if __name__ == '__main__':
     dotenv.load_dotenv('.env')
     token = environ.get("GITHUB_API_TOKEN")
+    if token is None:
+        token = input("Gotcha! You haven't read Readme.md. Please provide your github api token!")
     client = GitHubApi(token)
 
     print(asyncio.run(get_rate_cycle(client)))
