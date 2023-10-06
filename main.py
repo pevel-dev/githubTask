@@ -29,7 +29,7 @@ def out_plt(results, org_name):
 
     plt.gca().invert_yaxis()
 
-    plt.title(f'Top 10 коммитеров репозитория {org_name} ')
+    plt.title(f'Top 10 коммитеров организации {org_name} ')
     plt.xlabel('Количество')
 
     plt.savefig('top10graphic.png', dpi=300, bbox_inches='tight')
